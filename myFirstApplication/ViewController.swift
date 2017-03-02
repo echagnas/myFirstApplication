@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
+  // MARK: Properties
+  @IBOutlet weak var nameWordTextField: UITextField!
+  @IBOutlet weak var wordLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +23,10 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-
+  
+  // MARK: Actions
+  @IBAction func setLabel(_ sender: UIButton) {
+    self.wordLabel.text = nameWordTextField.text
+  }
 }
 
