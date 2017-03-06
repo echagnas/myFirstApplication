@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,26 +20,36 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="EjC-kw-R02">
+                                <rect key="frame" x="20" y="132" width="374" height="320"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EjC-kw-R02" secondAttribute="height" multiplier="187:160" id="UVJ-A7-hQx"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="M6M-ft-2ju" appends="YES" id="1lJ-Ta-oI8"/>
+                                </connections>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MiM-bQ-QeR">
-                                <rect key="frame" x="16" y="20" width="288" height="96.5"/>
+                                <rect key="frame" x="20" y="19.999999999999993" width="374" height="96.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orange" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-OU-wZh">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="56.666666666666671" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez un mot" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sh2-T8-oWs">
-                                        <rect key="frame" x="0.0" y="28.5" width="288" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez un mot" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sh2-T8-oWs">
+                                        <rect key="frame" x="0.0" y="28.333333333333332" width="374" height="29.999999999999996"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFk-q3-rFU">
-                                        <rect key="frame" x="0.0" y="66.5" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="66.333333333333329" width="60" height="30"/>
                                         <state key="normal" title="Set label"/>
                                         <connections>
                                             <action selector="setLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CfG-Bg-JlW"/>
@@ -46,26 +57,42 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lK0-OU-wZh" secondAttribute="trailing" id="Q6X-4z-Yh5"/>
-                                    <constraint firstAttribute="trailing" secondItem="sh2-T8-oWs" secondAttribute="trailing" id="swt-H4-FvM"/>
+                                    <constraint firstItem="xFk-q3-rFU" firstAttribute="top" secondItem="sh2-T8-oWs" secondAttribute="bottom" constant="8" id="2a3-vX-FH5"/>
+                                    <constraint firstAttribute="trailing" secondItem="sh2-T8-oWs" secondAttribute="trailing" id="GEC-FQ-Vxa"/>
+                                    <constraint firstItem="xFk-q3-rFU" firstAttribute="leading" secondItem="MiM-bQ-QeR" secondAttribute="leading" id="Nk1-9M-fMm"/>
+                                    <constraint firstItem="sh2-T8-oWs" firstAttribute="top" secondItem="lK0-OU-wZh" secondAttribute="bottom" constant="8" id="Y7D-n6-hHK"/>
+                                    <constraint firstItem="lK0-OU-wZh" firstAttribute="top" secondItem="MiM-bQ-QeR" secondAttribute="top" id="yY6-Uq-pWX"/>
+                                    <constraint firstItem="sh2-T8-oWs" firstAttribute="leading" secondItem="MiM-bQ-QeR" secondAttribute="leading" id="zQ4-oa-ahD"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="MiM-bQ-QeR" secondAttribute="trailing" id="CfT-wc-c24"/>
-                            <constraint firstItem="MiM-bQ-QeR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OEf-E5-ihG"/>
-                            <constraint firstItem="MiM-bQ-QeR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="nxz-Wo-QuL"/>
+                            <constraint firstItem="MiM-bQ-QeR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1ov-0B-Qsv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MiM-bQ-QeR" secondAttribute="trailing" id="3UZ-Cm-OQO"/>
+                            <constraint firstItem="EjC-kw-R02" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6HQ-fC-Pht"/>
+                            <constraint firstItem="MiM-bQ-QeR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DRd-H4-n1E"/>
+                            <constraint firstItem="EjC-kw-R02" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="O92-Pj-cDf"/>
+                            <constraint firstItem="EjC-kw-R02" firstAttribute="top" secondItem="MiM-bQ-QeR" secondAttribute="bottom" constant="8" id="Y9z-DX-HAo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="EjC-kw-R02" id="gd2-5p-VSW"/>
                         <outlet property="nameWordTextField" destination="sh2-T8-oWs" id="TAp-qX-jAh"/>
                         <outlet property="wordLabel" destination="lK0-OU-wZh" id="Jq4-9c-HZt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="M6M-ft-2ju">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="Zna-LO-ufP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.875" y="138.75"/>
+            <point key="canvasLocation" x="136.23188405797103" y="138.58695652173915"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sky" width="1632" height="1224"/>
+    </resources>
 </document>
