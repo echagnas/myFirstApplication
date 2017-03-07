@@ -12,6 +12,7 @@
 		A1D95F7B1E66B4F4004FCE14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D95F791E66B4F4004FCE14 /* Main.storyboard */; };
 		A1D95F7D1E66B4F4004FCE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D95F7C1E66B4F4004FCE14 /* Assets.xcassets */; };
 		A1D95F801E66B4F4004FCE14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D95F7E1E66B4F4004FCE14 /* LaunchScreen.storyboard */; };
+		A1F3C81A1E6EA21000EE7ED3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F3C8191E6EA21000EE7ED3 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A1D95F7C1E66B4F4004FCE14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1D95F7F1E66B4F4004FCE14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1D95F811E66B4F4004FCE14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1F3C8191E6EA21000EE7ED3 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		A1D95F741E66B4F4004FCE14 /* myFirstApplication */ = {
 			isa = PBXGroup;
 			children = (
+				A1F3C8181E6EA1A700EE7ED3 /* CustomViews */,
 				A1D95F751E66B4F4004FCE14 /* AppDelegate.swift */,
 				A1D95F771E66B4F4004FCE14 /* ViewController.swift */,
 				A1D95F791E66B4F4004FCE14 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				A1D95F811E66B4F4004FCE14 /* Info.plist */,
 			);
 			path = myFirstApplication;
+			sourceTree = "<group>";
+		};
+		A1F3C8181E6EA1A700EE7ED3 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				A1F3C8191E6EA21000EE7ED3 /* RatingControl.swift */,
+			);
+			name = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D95F781E66B4F4004FCE14 /* ViewController.swift in Sources */,
+				A1F3C81A1E6EA21000EE7ED3 /* RatingControl.swift in Sources */,
 				A1D95F761E66B4F4004FCE14 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +309,7 @@
 				A1D95F861E66B4F4004FCE14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

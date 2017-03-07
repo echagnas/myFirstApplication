@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="EjC-kw-R02">
-                                <rect key="frame" x="20" y="132" width="374" height="320"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="EjC-kw-R02">
+                                <rect key="frame" x="20" y="124.33333333333331" width="374" height="320"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EjC-kw-R02" secondAttribute="height" multiplier="187:160" id="UVJ-A7-hQx"/>
@@ -64,6 +64,10 @@
                                     <constraint firstItem="lK0-OU-wZh" firstAttribute="top" secondItem="MiM-bQ-QeR" secondAttribute="top" id="yY6-Uq-pWX"/>
                                     <constraint firstItem="sh2-T8-oWs" firstAttribute="leading" secondItem="MiM-bQ-QeR" secondAttribute="leading" id="zQ4-oa-ahD"/>
                                 </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEC-EP-gNq">
+                                <rect key="frame" x="20" y="452" width="200" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
