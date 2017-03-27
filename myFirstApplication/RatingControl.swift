@@ -13,7 +13,13 @@ class RatingControl: UIStackView {
   
   //MARK: Properties
   private var ratingButtons = [UIButton]()
-  var rating = 0
+  var rating = 0 {
+    //Call the methods each time the property changes.
+    didSet {
+      updateButtonsState()
+    }
+  }
+  
   @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
     didSet {
       setupButtons()
@@ -50,7 +56,7 @@ class RatingControl: UIStackView {
     }
     ratingButtons.removeAll()
     
-    for _ in 0..<starCount {
+    for index in 0..<starCount {
       let button = UIButton()
       
       button.setImage(emptyStar, for: .normal)
@@ -61,6 +67,7 @@ class RatingControl: UIStackView {
       button.translatesAutoresizingMaskIntoConstraints = false
       button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
       button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
+      button.accessibilityLabel = "Set \(index + 1) star rating"
       
       button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
       
@@ -68,9 +75,46 @@ class RatingControl: UIStackView {
       
       ratingButtons.append(button)
     }
+    
+    //Update the state of buttons.
+    updateButtonsState()
   }
   
   func ratingButtonTapped(button: UIButton){
     print("Button pressed")
+    guard let index = ratingButtons.index(of: button) else {
+      fatalError("error")
+    }
+    let selectedRating = index + 1
+    if (selectedRating == rating){
+      rating = 0
+    } else {
+      rating = selectedRating
+    }
+  }
+  
+  func updateButtonsState(){
+    for (index, button) in ratingButtons.enumerated(){
+      
+      let hintString: String?
+      if rating == index + 1 {
+        hintString = "Tap to reset the rating to zero"
+      } else {
+        hintString = nil
+      }
+      
+      let valueString: String
+      switch (rating) {
+      case 0:
+        valueString = "No rating set."
+      case 1:
+        valueString = "1 star set."
+      default:
+        valueString = "\(rating) stars set."
+      }
+      button.accessibilityHint = hintString
+      button.accessibilityValue = valueString
+      button.isSelected = index < rating
+    }
   }
 }

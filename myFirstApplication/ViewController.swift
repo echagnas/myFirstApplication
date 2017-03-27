@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
   @IBOutlet weak var nameWordTextField: UITextField!
   @IBOutlet weak var wordLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var ratingControl: RatingControl!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,11 +24,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
-  }
-  
-  // MARK: Actions
-  @IBAction func setLabel(_ sender: UIButton) {
-    self.wordLabel.text = "Orange"
   }
   
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
